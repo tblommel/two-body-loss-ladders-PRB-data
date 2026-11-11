@@ -4,7 +4,7 @@ title: "two-body-loss-ladders: code and data for 'Ladder Resummations and Time-L
 type: software
 license: MIT
 version: "1.0.0"
-# doi: TODO Zenodo DOI
+doi: "10.5281/zenodo.24125629"
 repository-code: "https://github.com/tblommel/two-body-loss-ladders-PRB-data"
 authors:
   - family-names: Blommel
