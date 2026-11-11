@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite the paper below and this repository."
+title: "two-body-loss-ladders: code and data for 'Ladder Resummations and Time-Linear Green's Functions for Two-Body Loss and Gain in Open Quantum Systems'"
+type: software
+license: MIT
+version: "0.1.0-dev"   # TODO: set at release (must equal VERSION)
+# doi: TODO Zenodo DOI
+# repository-code: TODO GitHub URL
+authors:
+  - family-names: Blommel
+    given-names: Thomas
+    affiliation: "University of California, Santa Barbara"
+  - family-names: Vlcek
+    given-names: Vojtech
+    affiliation: "University of California, Santa Barbara"
+preferred-citation:
+  type: article
+  title: "Ladder Resummations and Time-Linear Green's Functions for Two-Body Loss and Gain in Open Quantum Systems"
+  authors:
+    - family-names: Blommel
+      given-names: Thomas
+    - family-names: Vlcek
+      given-names: Vojtech
+  year: 2026
+  # journal: TODO
+  # doi: TODO

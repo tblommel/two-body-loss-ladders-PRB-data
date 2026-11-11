@@ -1,0 +1,12 @@
+# run outputs and builds (never committed, never shipped)
+output/
+build*/
+# python / jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+# editors / OS
+.DS_Store
+*.swp
+# runner logs of the full rerun
+*/run_all.log

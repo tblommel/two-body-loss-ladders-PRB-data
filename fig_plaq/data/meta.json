@@ -1,0 +1,27 @@
+{
+ "release_version": "0.1.0-dev+nogit",
+ "generated_by": "fig_plaq/postprocess.py",
+ "producers": {
+  "dp5drive": [
+   "0.1.0-dev+nogit"
+  ],
+  "code_exact": [
+   "0.1.0-dev+nogit"
+  ]
+ },
+ "files": {
+  "curves.csv": {
+   "description": "plaquette trajectories of the four panels (frames every 0.1/J, t <= 200/J); mGW <S^2> uses the driver's mean-field two-body density matrix (not plotted)",
+   "columns": {
+    "method": "exact or data label",
+    "ic": "initial state",
+    "gamma": "gamma [J]",
+    "status": "driver status (exact: Ok)",
+    "t": "time [1/J]",
+    "N": "total particle number [1]",
+    "D": "total double occupancy sum_r D_r [1]",
+    "S2": "total spin <S^2> [1]"
+   }
+  }
+ }
+}

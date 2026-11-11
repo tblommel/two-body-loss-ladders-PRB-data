@@ -1,0 +1,74 @@
+{
+ "schema": "exact_card/1",
+ "run_id": "site_n0.5_g1_exact",
+ "model": {
+  "name": "site",
+  "n_orb": 1,
+  "h1": [
+   [
+    0.0
+   ]
+  ],
+  "onebody_loss": [
+   0.0
+  ],
+  "onebody_gain": [
+   0.0
+  ],
+  "pair_loss": {
+   "sites": [
+    0
+   ],
+   "gamma": 1.0,
+   "weights": [
+    1.0
+   ]
+  }
+ },
+ "initial_state": {
+  "type": "gaussian",
+  "rho1_up": [
+   [
+    0.5
+   ]
+  ],
+  "rho1_dn": [
+   [
+    0.5
+   ]
+  ]
+ },
+ "tasks": [
+  {
+   "type": "transient",
+   "name": "transient",
+   "grid": [
+    {
+     "t_end": 2000.0,
+     "dt": 0.05
+    }
+   ],
+   "observables": [
+    "N",
+    "N_sigma",
+    "n",
+    "D",
+    "S2",
+    "rho1_eig"
+   ]
+  },
+  {
+   "type": "n_inf",
+   "name": "n_inf",
+   "observables": [
+    "N",
+    "N_sigma",
+    "n",
+    "D"
+   ]
+  }
+ ],
+ "output": {
+  "file": "result.h5"
+ }
+}

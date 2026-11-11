@@ -1,0 +1,4 @@
+build*/
+tests/work*/
+integrator/tests/profile_dump.json
+__pycache__/

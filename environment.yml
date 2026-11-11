@@ -1,0 +1,21 @@
+# Conda environment for two-body-loss-ladders.
+# Create:  conda env create -f environment.yml --override-channels -c conda-forge
+name: two-body-loss-ladders
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy=2.4.1
+  - scipy=1.17.0
+  - matplotlib=3.10.8
+  - h5py=3.15
+  - jupyter
+  - nbconvert
+  - ipykernel
+  # C++ toolchain for code_diagrammatics (system compilers / HDF5 / Eigen also work)
+  - cmake>=3.16
+  - make
+  - cxx-compiler
+  - eigen=3.4.0
+  - hdf5            # conda-forge hdf5 includes the C++ bindings
+  - llvm-openmp     # OpenMP runtime for clang on macOS (harmless elsewhere)

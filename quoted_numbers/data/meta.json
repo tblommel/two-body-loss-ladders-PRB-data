@@ -1,0 +1,67 @@
+{
+ "release_version": "0.1.0-dev+nogit",
+ "generated_by": "quoted_numbers/postprocess.py",
+ "producers": {
+  "dp5drive": [
+   "0.1.0-dev+nogit"
+  ],
+  "code_exact": [
+   "0.1.0-dev+nogit"
+  ]
+ },
+ "files": {
+  "kappa_biggamma.csv": {
+   "description": "exact plaquette loss coefficient at strong loss (definitions of fig_zeno/postprocess.py)",
+   "columns": {
+    "ic": "initial state",
+    "gamma": "gamma [J]",
+    "N_inf": "exact t -> infinity N [1]",
+    "kappa": "kappa [J]",
+    "gamma_kappa": "gamma kappa [J^2]",
+    "D_over_O": "window mean of D/O [1]"
+   }
+  },
+  "sigma_extrema.csv": {
+   "description": "local extrema (order 20, i.e. 0.2 in omega) of the exact -Im/Re Sigma^R_up on [-6, 6] (fig_sigma data), each paired with the nearest extremum of the same kind of the method",
+   "columns": {
+    "method": "scheme",
+    "gamma": "gamma [h1]",
+    "part": "-Im or Re",
+    "kind": "max or min",
+    "w_exact": "exact position [h1]",
+    "w": "method position [h1]",
+    "d_w": "|w - w_exact| [h1]"
+   }
+  },
+  "sigma_features.csv": {
+   "description": "shape of Sigma^R_up(omega) on omega in [-6, 6] (fig_sigma data)",
+   "columns": {
+    "method": "exact or data label",
+    "gamma": "pair-loss rate [h1 units]",
+    "peak_w": "omega of the largest local maximum of -Im Sigma at omega < 0 [h1]",
+    "peak": "its value [h1]",
+    "posmin_w": "omega of the deepest local minimum of -Im Sigma at omega > 0 [h1]",
+    "posmin": "its value [h1]",
+    "re_max_w": "omega of the largest local maximum of Re Sigma [h1]",
+    "re_max": "its value [h1]",
+    "re_min_w": "omega of the deepest local minimum of Re Sigma [h1]",
+    "re_min": "its value [h1]",
+    "int_abs_err": "int |Sigma - Sigma_exact| d omega over [-6, 6] (trapezoid) [h1^2]"
+   }
+  },
+  "stability.csv": {
+   "description": "strongly damped impurity, G1-G2 to t = 600 from a slightly polarized impurity (pert: n_up 0.101, n_dn 0.100) and from the polarized start (ic10)",
+   "columns": {
+    "method": "data label",
+    "ic": "pert | ic10",
+    "gamma": "pair-loss rate [h1 units]",
+    "status": "driver status",
+    "t_end": "last frame [1/h1]",
+    "Mz0": "impurity M_z(0) [1]",
+    "Mz_end": "M_z at the last frame [1]",
+    "Mz_absmax": "max_t |M_z| [1]",
+    "nd_end": "impurity occupation at the last frame [1]"
+   }
+  }
+ }
+}

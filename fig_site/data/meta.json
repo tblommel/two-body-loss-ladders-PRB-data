@@ -1,0 +1,58 @@
+{
+ "release_version": "0.1.0-dev+nogit",
+ "generated_by": "fig_site/postprocess.py",
+ "producers": {
+  "dp5drive": [
+   "0.1.0-dev+nogit"
+  ],
+  "code_exact": [
+   "0.1.0-dev+nogit"
+  ]
+ },
+ "files": {
+  "curves.csv": {
+   "description": "n_sigma(gamma t) and D(gamma t) from n0 = 0.5 and 0.9 (panels a, b); frames: all up to gamma t = 10, then 700 log-spaced output frames",
+   "columns": {
+    "method": "exact or data label",
+    "n0": "initial occupation per spin",
+    "gt": "gamma t [1]",
+    "n_up": "occupation per spin n_sigma (spin up) [1]",
+    "D": "double occupancy <n_up n_dn> [1]"
+   }
+  },
+  "endpoints.csv": {
+   "description": "n_sigma at gamma t = 2000 versus n0 (panel c)",
+   "columns": {
+    "method": "exact or data label",
+    "n0": "initial occupation per spin",
+    "n_up": "n_sigma(gamma t = 2000) [1]"
+   }
+  },
+  "exact_ninf.csv": {
+   "description": "exact t -> infinity limit (zero-mode projection)",
+   "columns": {
+    "n0": "initial occupation per spin",
+    "n_inf": "n_sigma(t -> infinity) [1]"
+   }
+  },
+  "summary.csv": {
+   "description": "per driver run: status and deviations from the exact run on identical frames (Sec. VII A numbers)",
+   "columns": {
+    "method": "data label",
+    "n0": "initial occupation per spin",
+    "status": "driver status",
+    "gt_reached": "last frame [gamma t]",
+    "err_n": "max_t |n - n_exact| [1]",
+    "err_D": "max_t |D - D_exact| [1]",
+    "n_min": "min_t n_sigma [1]",
+    "D_min": "min_t D [1]",
+    "eig_min": "min_t smallest eigenvalue of rho [1]",
+    "eig_max": "max_t largest eigenvalue of rho [1]",
+    "dN_dt_max": "max_t dN/dt [gamma]",
+    "n_gt100": "n_sigma at gamma t = 100 [1]",
+    "n_gt500": "n_sigma at gamma t = 500 [1]",
+    "n_gt2000": "n_sigma at gamma t = 2000 [1]"
+   }
+  }
+ }
+}

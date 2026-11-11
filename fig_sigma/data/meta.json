@@ -1,0 +1,34 @@
+{
+ "release_version": "0.1.0-dev+nogit",
+ "generated_by": "fig_sigma/postprocess.py",
+ "producers": {
+  "dp5drive": [
+   "0.1.0-dev+nogit"
+  ],
+  "code_exact": [
+   "0.1.0-dev+nogit"
+  ]
+ },
+ "files": {
+  "sigma.h5": {
+   "description": "groups /<method>/<system>_<ic>_g<gamma>/: tau [n], GR complex [n, 2] (spin up, dn; G^R_dd(t'+tau, t'), every tau_stride-th sample of the run's grid dt), omega [m], GR_w complex [m, 2], Sigma complex [m, 2]; exact also omega_resolvent, GR_resolvent (independent resolvent G^R(omega), spin up then dn); attrs gamma, ic, t_prime, tau_end, dt, eta, orbital, status"
+  },
+  "summary.csv": {
+   "description": "one row per run",
+   "columns": {
+    "method": "exact or data label",
+    "system": "c3",
+    "ic": "ic00",
+    "gamma": "pair-loss rate [h1 units]",
+    "status": "driver status",
+    "t_prime": "RTDE start [1/h1]",
+    "tau_end": "RTDE duration [1/h1]",
+    "n_up": "n_d,up at the steady state [1]",
+    "n_dn": "n_d,dn [1]",
+    "gamma_n_dn": "gamma n_d,dn: |Sigma_up(omega -> inf)| expected [h1 units]",
+    "Sigma_inf_up_re": "Re Sigma_up(omega -> inf) from G'(tau = 0) [h1 units]",
+    "Sigma_inf_up_im": "Im Sigma_up(omega -> inf) [h1 units]"
+   }
+  }
+ }
+}

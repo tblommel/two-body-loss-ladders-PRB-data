@@ -1,0 +1,52 @@
+{
+ "release_version": "0.1.0-dev+nogit",
+ "generated_by": "fig_impss/postprocess.py",
+ "producers": {
+  "dp5drive": [
+   "0.1.0-dev+nogit"
+  ],
+  "code_exact": [
+   "0.1.0-dev+nogit"
+  ]
+ },
+ "files": {
+  "mz_curves.csv": {
+   "description": "impurity occupations and magnetization from the polarized start (IC 10), t <= 20, every 5th output frame (driver: plus the frame at t')",
+   "columns": {
+    "method": "exact or data label",
+    "system": "c3 or c3G0.2",
+    "gamma": "pair-loss rate [h1 units]",
+    "t": "time [1/h1]",
+    "Mz": "(n_d,up - n_d,dn)/2 [1]",
+    "n_up": "n_d,up [1]",
+    "n_dn": "n_d,dn [1]"
+   }
+  },
+  "steady.csv": {
+   "description": "one row per run: steady state (driver: frame at t'; exact IC 00: NESS; exact IC 11/10: state at t = 150) and trajectory record",
+   "columns": {
+    "method": "exact or data label",
+    "system": "c3 (strongly damped) or c3G0.2 (weakly damped)",
+    "ic": "impurity start ic00 | ic11 | ic10",
+    "gamma": "pair-loss rate [h1 units]",
+    "status": "driver status",
+    "t_prime": "RTDE start t' [1/h1]",
+    "ss_detected": "1 if t' was detected (0: detector timeout)",
+    "tau_end": "RTDE duration [1/h1]",
+    "n_up": "impurity occupation n_d,up [1]",
+    "n_dn": "n_d,dn [1]",
+    "D": "impurity double occupancy [1]",
+    "Mz": "(n_d,up - n_d,dn)/2 [1]",
+    "D_min": "min_t D [1]",
+    "n_min": "min_t of n_d,up and n_d,dn [1]",
+    "eig_min": "min_t smallest eigenvalue of rho [1]",
+    "eig_max": "max_t largest eigenvalue of rho [1]",
+    "P_min": "min over checkpoints (driver, every 2) or frames (exact, every 1) of the smallest eigenvalue of P [1]",
+    "Q_min": "same for Q [1]",
+    "Gp_min": "same for G' [1]",
+    "Mz_t1e": "IC 10: first time at which Mz(t) = Mz(0)/e [1/h1]",
+    "Mz_last005": "IC 10: last time at which Mz(t) = 0.05 is crossed from above, linear interpolation between frames (end of the series if it ends above 0.05; driver: up to the end of the run; exact: t <= 150) [1/h1]"
+   }
+  }
+ }
+}

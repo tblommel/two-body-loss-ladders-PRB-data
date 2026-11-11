@@ -1,0 +1,42 @@
+{
+ "release_version": "0.1.0-dev+nogit",
+ "generated_by": "fig_zeno/postprocess.py",
+ "producers": {
+  "dp5drive": [
+   "0.1.0-dev+nogit"
+  ],
+  "code_exact": [
+   "0.1.0-dev+nogit"
+  ]
+ },
+ "files": {
+  "kappa.csv": {
+   "description": "loss coefficient kappa (25% definition, see postprocess.py) per method, initial state and gamma",
+   "columns": {
+    "method": "exact or data label",
+    "ic": "initial state",
+    "gamma": "gamma [J]",
+    "status": "driver status of the long segment (exact: Ok)",
+    "N_inf": "t -> infinity particle number [1]",
+    "N_inf_how": "exact | conv | aitken | nonmono | fail",
+    "kappa": "loss coefficient [J]"
+   }
+  },
+  "window.csv": {
+   "description": "time means over the kappa window",
+   "columns": {
+    "method": "exact or data label",
+    "ic": "initial state",
+    "gamma": "gamma [J]",
+    "source": "main transient or fine task (exact mixed, gamma >= 10)",
+    "t1": "window start [1/J]",
+    "t2": "window end [1/J]",
+    "O": "sum_r n_r,up n_r,dn [1]",
+    "D": "sum_r D_r [1]",
+    "D_over_O": "correlation-hole factor D/O [1]",
+    "S": "staggering sum_r |n_r,up - n_r,dn| / N [1]",
+    "A": "O / (N^2/16) [1]"
+   }
+  }
+ }
+}
