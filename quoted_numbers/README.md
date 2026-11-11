@@ -26,7 +26,7 @@ exact run, ≤ 5.2 GB in total.
 2. `python make_runcards.py` — optional (cards committed).
 3. `./run.sh -P 28` — runs the 28 cards into `output/`.
 4. `python postprocess.py` — `output/` (and `../fig_sigma/data`) → `data/`: `stability.csv`, `kappa_biggamma.csv`,
-   `sigma_features.csv` (columns in `data/meta.json`).
+   `sigma_features.csv`, `sigma_extrema.csv` (columns in `data/meta.json`).
 5. `jupyter nbconvert --execute --to notebook --inplace sec7A.ipynb sec7B.ipynb sec7C.ipynb appA.ipynb`.
 
 Expected agreement: every quoted number reproduces its printed digits (the notebooks print `match`).

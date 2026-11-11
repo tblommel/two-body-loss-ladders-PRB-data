@@ -10,3 +10,5 @@ __pycache__/
 *.swp
 # runner logs of the full rerun
 */run_all.log
+# written by test_dp5
+code_diagrammatics/profile_dump.json

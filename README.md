@@ -31,7 +31,7 @@ the runs, the data files and the measured cost.
 
 Install conda (e.g. [Miniforge](https://github.com/conda-forge/miniforge)), then from this directory:
 
-    conda env create -f environment.yml --override-channels -c conda-forge     # once, ~5 min
+    conda env create -f environment.yml     # once, ~5 min; environment.yml lists only conda-forge
     conda activate two-body-loss-ladders
 
 The environment contains Python (numpy, scipy, matplotlib, h5py, jupyter) and the C++ toolchain for the solver
@@ -48,13 +48,13 @@ paper.
 
 With the environment active, from this directory:
 
-    unset CXXFLAGS            # optional: conda sets portable CXXFLAGS; unset them for a plain -O3 build
     cmake -S code_diagrammatics -B code_diagrammatics/build -DCMAKE_BUILD_TYPE=Release
     cmake --build code_diagrammatics/build -j
     code_diagrammatics/build/dp5drive --version
 
-Tests (each ends with `ALL ... PASSED`):
+Tests (each ends with `ALL ... PASSED`; `test_dp5` uses every hardware thread unless `OMP_NUM_THREADS` is set):
 
+    export OMP_NUM_THREADS=4
     cd code_diagrammatics
     build/test_dp5
     for t in run_tests test_step2 test_step3 test_step3b test_step7a test_step7b test_step8 test_step9; do
@@ -71,7 +71,9 @@ keys, the output format and system-package builds; `code_exact/README.md` for th
 
 For each directory this runs every card (`run.sh` → `output/`), processes the outputs (`postprocess.py` → `data/`,
 overwriting the shipped data) and executes the notebooks (→ figures and printed numbers). `./run_all.sh -P 32 fig_site`
-does one directory. Finished runs are skipped when the script is restarted.
+does one directory. Finished runs are skipped when the script is restarted. Directories run one after another; to
+fill idle cores during the long `fig_impss` tail, `run.sh` of a *different* directory can run alongside. Never run two
+`run.sh` on the same directory at once: each restarts (and deletes) the other's unfinished outputs.
 
 Cost (measured on AMD EPYC 7xx3/7502 cores, one core per run):
 
@@ -86,8 +88,12 @@ Cost (measured on AMD EPYC 7xx3/7502 cores, one core per run):
 | `quoted_numbers` | 24 + 4 | 0.4 | 13 min | 2.1 GB |
 | total | 845 + 183 | ≈ 31 | | |
 
+The long exact impurity runs are memory-bandwidth bound: on an Intel Xeon Gold 6254 node with 34 runs in parallel the
+`fig_impss` exact runs took 1.4–3 h each, the total was about 60 core-hours, and the full regeneration took 3.6 h.
+`fig_impss/postprocess.py` reads 18 GB of outputs and takes about 15 min on a network file system.
+
 Wall time is set by the longest runs: about 1.5–2 h with ≥ 64 cores, about a day on 8 cores. Keep `-P` ≤ (free RAM)
-/ 2.1 GB. The outputs take about 35 GB of disk (`*/output/`, not part of the repository; `fig_impss` alone 30 GB) and can be
+/ 2.1 GB. The outputs take about 22 GB of disk (`*/output/`, not part of the repository; `fig_impss` alone 18 GB) and can be
 deleted after the postprocessing.
 
 **Expected agreement with the shipped data.** On a different machine or compiler the results agree with the shipped

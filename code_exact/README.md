@@ -7,7 +7,7 @@ nothing else from this repository.
 ## 1. Install
 
 ```
-conda env create -f environment.yml --override-channels -c conda-forge    # from the release root
+conda env create -f environment.yml    # from the release root
 conda activate two-body-loss-ladders
 ```
 Any Python ≥ 3.10 with numpy ≥ 1.26, scipy ≥ 1.12 (needs `expm_multiply` with time grids and `gmres(rtol=...)`) and

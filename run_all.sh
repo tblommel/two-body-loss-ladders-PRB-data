@@ -20,7 +20,7 @@ done
 [ ${#DIRS[@]} -gt 0 ] || DIRS=(fig_site fig_plaq tab_plaqerr fig_zeno fig_impss fig_sigma quoted_numbers)
 PY="${PYTHON:-python3}"
 [ -x "${DP5DRIVE:-$R/code_diagrammatics/build/dp5drive}" ] || {
-  echo "dp5drive not found: build it first (README.md, 'Build the solver')" >&2; exit 2; }
+  echo "dp5drive not found: build it first (README.md, 'Build and test the solver')" >&2; exit 2; }
 command -v jupyter >/dev/null || { echo "jupyter not found: activate the conda environment (README.md)" >&2; exit 2; }
 for d in "${DIRS[@]}"; do
   echo "=== $d: runs ($(date))"

@@ -46,7 +46,7 @@ For the tests also Python 3 with numpy, scipy, h5py.
 From the release root (the directory that holds `environment.yml`):
 
 ```bash
-conda env create -f environment.yml --override-channels -c conda-forge     # once, ~5 min
+conda env create -f environment.yml     # once, ~5 min; environment.yml lists only conda-forge
 conda activate two-body-loss-ladders
 cmake -S code_diagrammatics -B code_diagrammatics/build -DCMAKE_BUILD_TYPE=Release
 cmake --build code_diagrammatics/build -j
@@ -56,9 +56,9 @@ code_diagrammatics/build/dp5drive --version
 The build takes about 1–2 minutes. It produces `code_diagrammatics/build/dp5drive` (the path the figure
 directories' `run.sh` use by default) and the integrator unit test `code_diagrammatics/build/test_dp5`.
 
-Note: activating a conda environment with `cxx-compiler` sets `CXXFLAGS` (e.g. `-march=nocona -mtune=haswell -O2 …`),
-which CMake picks up. These flags are portable to every x86-64 machine and are recorded in every output file
-(`/provenance/build_flags`). To build with exactly `-O3 -DNDEBUG`, run `unset CXXFLAGS` before the first `cmake`.
+Note: some conda compiler packages set `CXXFLAGS` on activation, which CMake picks up; the flags in use are recorded in
+every output file (`/provenance/build_flags`). To build with exactly `-O3 -DNDEBUG`, run `unset CXXFLAGS` before the
+first `cmake`.
 
 ### Option B: system packages
 
